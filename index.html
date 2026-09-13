@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- viewport-fit=cover: usa tambien la zona bajo el notch en iPhone.
+         maximum-scale/user-scalable NO se bloquean: impedir el zoom es una
+         barrera de accesibilidad y el lienzo ya se escala solo. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="dark" />
+
+    <title>rickyedit.exe</title>
+    <meta
+      name="description"
+      content="Una experiencia interactiva experimental inspirada en el universo de RickyEdit: 5 protocolos, 5 secretos y un sistema que registra mas de lo que dice."
+    />
+    <meta name="author" content="Antonio Manuel Rodriguez" />
+
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="rickyedit.exe" />
+    <meta property="og:title" content="rickyedit.exe" />
+    <meta
+      property="og:description"
+      content="5 protocolos. 5 secretos. Un sistema que te esta mirando. Proyecto de fan no oficial."
+    />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_ES" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="rickyedit.exe" />
+    <meta
+      name="twitter:description"
+      content="5 protocolos. 5 secretos. Un sistema que te esta mirando."
+    />
+    <meta name="twitter:image" content="/og-image.png" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      RICKYEDIT.EXE necesita JavaScript para ejecutarse. Activalo y recarga la pagina.
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

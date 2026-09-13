@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="RICKYEDIT.EXE">
+  <rect width="256" height="256" fill="#050505"/>
+  <rect x="18" y="18" width="220" height="220" fill="#c0c0c0"/>
+  <path d="M18 18h220v8H26v212h-8z" fill="#ffffff"/>
+  <path d="M238 18v220H18v-8h212V18z" fill="#404040"/>
+  <rect x="28" y="28" width="200" height="42" fill="#000080"/>
+  <g fill="#c0c0c0"><rect x="190" y="38" width="12" height="22"/><rect x="208" y="38" width="12" height="22"/></g>
+  <rect x="32" y="80" width="192" height="144" fill="#050505"/>
+  <g fill="#3dff8a">
+    <rect x="48" y="104" width="22" height="10"/><rect x="78" y="104" width="22" height="10"/>
+    <rect x="48" y="130" width="90" height="10"/>
+    <rect x="48" y="156" width="40" height="10"/><rect x="104" y="156" width="32" height="22"/>
+  </g>
+</svg>

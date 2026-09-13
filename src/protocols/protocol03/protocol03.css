@@ -1,0 +1,8 @@
+.p3-sequence {
+  font-family: var(--font-terminal);
+  color: var(--terminal-fg);
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}

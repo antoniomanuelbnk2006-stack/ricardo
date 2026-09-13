@@ -1,0 +1,8 @@
+.p4-clues {
+  font-family: var(--font-terminal);
+  color: var(--terminal-fg);
+  font-size: 15px;
+  text-align: center;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}

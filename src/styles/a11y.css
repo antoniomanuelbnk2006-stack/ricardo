@@ -1,0 +1,45 @@
+/* Foco visible en TODO lo interactivo. La estetica es retro, pero el
+   juego tiene que poder recorrerse con teclado (biblia, seccion 12).
+   Se usa :focus-visible para que el foco no aparezca al hacer click con
+   el raton y rompa el aspecto de Windows 95. */
+:where(button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])):focus-visible {
+  outline: 2px solid #ffd34d;
+  outline-offset: 1px;
+  /* Segundo anillo oscuro: garantiza contraste tanto sobre el gris de
+     las ventanas como sobre el negro del terminal. */
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.85);
+  z-index: 1;
+}
+
+/* Cualquier objetivo tactil llega a 44x44 CSS px cuando el lienzo se
+   pinta a escala 1. Por debajo de eso el escalado lo encoge, y por eso
+   existe el aviso de girar el dispositivo. */
+.touch-target {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Respeta la preferencia del sistema ademas del ajuste interno de
+   REDUCED MOTION de la ventana Config. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Texto solo para lectores de pantalla. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

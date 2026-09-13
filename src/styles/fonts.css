@@ -1,0 +1,3 @@
+/* MS Sans Serif no existe en la web; usamos Tahoma como sustituto mas
+   cercano y dejamos sans-serif como ultimo recurso. No se cargan fuentes
+   externas para mantener el proyecto sin dependencias de red. */

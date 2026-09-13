@@ -1,0 +1,8 @@
+.p5-status-line { font-family: var(--font-terminal); color: #e0e0e0; }
+.p5-progress-bar {
+  font-family: var(--font-terminal);
+  color: var(--terminal-fg);
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+}

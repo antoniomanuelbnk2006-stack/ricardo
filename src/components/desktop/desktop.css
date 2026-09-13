@@ -1,0 +1,67 @@
+.desktop-root {
+  position: absolute;
+  inset: 0;
+  font-family: var(--font-ui);
+  overflow: hidden;
+  /* Fondo por defecto: teal clasico de Windows con un degradado muy
+     suave para que no sea un plano liso. Si existe una imagen de
+     escritorio real se pinta encima (ver .desktop-wallpaper). */
+  background:
+    radial-gradient(120% 90% at 50% 0%, #0a9c9c 0%, var(--desktop-teal) 45%, #004f4f 100%);
+}
+
+/* Capa de la fotografia de fondo. `contain` evita deformarla (biblia:
+   "la imagen debe utilizarse con cuidado y sin deformarse") y el teal de
+   debajo cubre lo que sobre. */
+.desktop-wallpaper {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+}
+
+.desktop-icons {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.desktop-icon-btn {
+  width: 84px;
+  min-height: 72px;
+  background: transparent;
+  border: 1px dotted transparent;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  cursor: default;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.desktop-icon-btn.is-selected {
+  border-color: #ffffff;
+}
+.desktop-icon-glyph {
+  display: block;
+  line-height: 0;
+}
+.desktop-icon-label {
+  font-size: 11px;
+  line-height: 13px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  padding: 1px 3px;
+  text-align: center;
+  word-break: break-word;
+}
+.desktop-icon-btn.is-selected .desktop-icon-label {
+  background: var(--titlebar-active-a);
+  text-shadow: none;
+}

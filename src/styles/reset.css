@@ -1,0 +1,9 @@
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; padding: 0; }
+button { font: inherit; color: inherit; }
+/* Safari iOS aumenta el tamano de fuente al girar a horizontal si no se
+   desactiva: rompia el lienzo de tamano fijo. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+/* Nada de rebote/scroll de pagina: la experiencia vive dentro del lienzo. */
+body { overscroll-behavior: none; }
+img { max-width: 100%; display: block; }

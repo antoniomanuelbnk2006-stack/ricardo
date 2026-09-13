@@ -1,0 +1,114 @@
+/* Contenedor exterior: fondo negro, el monitor centrado.
+   100dvh (con fallback a 100vh) evita el salto clasico de Safari iOS,
+   donde 100vh incluye la barra de direcciones y recorta el lienzo. */
+.app-viewport {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* Sin retardo de 300ms ni zoom por doble toque: el escritorio usa
+     doble click para abrir iconos y el navegador lo confundia con un
+     gesto de zoom. */
+  touch-action: manipulation;
+}
+
+/* Capa que recibe la escala y el temblor. Envuelve al lienzo, lleve
+   televisor alrededor o no. */
+.app-stage {
+  position: relative;
+  transform-origin: center center;
+}
+
+.app-canvas {
+  position: relative;
+  border-radius: 6px;
+  box-shadow:
+    0 0 0 10px #1c1d1f,
+    0 0 0 12px #050505,
+    0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+/* Dentro del televisor, el marco lo pone el mueble: el lienzo no necesita
+   su propio bisel ni su propia sombra. */
+.app-canvas-framed {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Pantalla de apagado ("Ya puede apagar el equipo"). Es un <button> para
+   que se pueda cerrar tambien con teclado, no solo con raton. */
+.shutdown-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 20000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #000;
+  color: #ffb300;
+  border: 0;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  letter-spacing: 1px;
+  cursor: default;
+}
+.shutdown-hint {
+  color: #6b6b6b;
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+/* Aviso de girar el dispositivo (solo movil en vertical). */
+.rotate-hint {
+  position: absolute;
+  inset: 0;
+  z-index: 30000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.88);
+}
+.rotate-hint-box {
+  max-width: 300px;
+  padding: 20px;
+  border: 2px solid var(--terminal-fg);
+  background: #050505;
+  color: var(--terminal-fg);
+  font-family: var(--font-terminal);
+  text-align: center;
+}
+.rotate-hint-glyph {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.rotate-hint-title {
+  margin: 0 0 8px;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+.rotate-hint-text {
+  margin: 0 0 16px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #9ad9b4;
+}
+.rotate-hint-btn {
+  min-height: 44px;
+  width: 100%;
+  padding: 0 14px;
+  background: #111;
+  color: var(--terminal-fg);
+  border: 1px solid var(--terminal-fg);
+  font-family: var(--font-terminal);
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}

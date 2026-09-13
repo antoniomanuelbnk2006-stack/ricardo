@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    // Sin noEmit, `tsc -b` dejaba un vite.config.js y un vite.config.d.ts
+    // sueltos en la raiz del repo cada vez que se compilaba.
+    "noEmit": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "strict": true
+  },
+  "include": ["vite.config.ts"]
+}

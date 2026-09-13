@@ -1,0 +1,7 @@
+.p1-exhibit {
+  font-family: var(--font-terminal);
+  color: var(--terminal-fg);
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.8;
+}

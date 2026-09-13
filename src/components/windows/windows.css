@@ -1,0 +1,76 @@
+.win-frame {
+  position: absolute;
+  background: var(--win-bg);
+  border: 2px solid;
+  border-color: var(--win-highlight) var(--win-dark) var(--win-dark) var(--win-highlight);
+  box-shadow:
+    inset 1px 1px 0 #dfdfdf,
+    inset -1px -1px 0 var(--win-shadow),
+    2px 2px 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-ui);
+  font-size: 12px;
+}
+
+.win-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  height: 22px;
+  margin: 2px;
+  padding: 0 2px 0 4px;
+  background: linear-gradient(to right, #808080, #b0b0b0);
+  color: #dfdfdf;
+  font-weight: bold;
+  cursor: default;
+  user-select: none;
+  /* El arrastre lo gestionamos nosotros: sin esto, en movil el navegador
+     se quedaba el gesto para hacer scroll y la ventana no se movia. */
+  touch-action: none;
+}
+.win-titlebar-active {
+  background: linear-gradient(to right, var(--titlebar-active-a), var(--titlebar-active-b));
+  color: #fff;
+}
+.win-titlebar-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.win-titlebar-controls {
+  display: flex;
+  gap: 2px;
+  flex: 0 0 auto;
+}
+.win-titlebar-btn {
+  width: 18px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  line-height: 1;
+  background: var(--win-bg);
+  color: #000;
+  border: 1px solid;
+  border-color: var(--win-highlight) var(--win-dark) var(--win-dark) var(--win-highlight);
+  cursor: default;
+  padding: 0;
+}
+.win-titlebar-btn:active {
+  border-color: var(--win-dark) var(--win-highlight) var(--win-highlight) var(--win-dark);
+}
+
+.win-content {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  background: #000;
+  margin: 0 2px 2px;
+  border: 1px solid;
+  border-color: var(--win-shadow) var(--win-highlight) var(--win-highlight) var(--win-shadow);
+  -webkit-overflow-scrolling: touch;
+}

@@ -1,0 +1,31 @@
+.config-panel {
+  color: #000;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  padding: 14px;
+  background: var(--win-bg);
+  height: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+.config-title { margin-bottom: 10px; font-weight: bold; }
+.config-section-title { margin: 14px 0 6px; font-weight: bold; opacity: 0.8; }
+.config-row { display: block; margin-bottom: 10px; }
+.config-danger-btn {
+  display: block;
+  width: 100%;
+  padding: 6px;
+  background: #c0c0c0;
+  border: 2px outset #ffffff;
+  color: #7a0000;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  cursor: default;
+}
+.config-confirm-box {
+  border: 2px inset #808080;
+  background: #ffffe0;
+  padding: 8px;
+  margin-top: 8px;
+  font-size: 11px;
+}

@@ -1,0 +1,198 @@
+/* Televisor de madera dibujado solo con CSS: sin imagenes, sin peso y
+   nitido a cualquier escala. Todas las medidas estan en pixeles de lienzo
+   y se escalan junto al resto de la interfaz. */
+
+.tv-shell {
+  position: relative;
+  border-radius: 26px;
+}
+
+/* Carcasa: nogal oscuro con una veta muy tenue. */
+.tv-wood {
+  position: absolute;
+  inset: 0;
+  border-radius: 26px;
+  background:
+    repeating-linear-gradient(
+      92deg,
+      rgba(0, 0, 0, 0.16) 0px,
+      rgba(0, 0, 0, 0) 3px,
+      rgba(255, 255, 255, 0.05) 7px,
+      rgba(0, 0, 0, 0) 12px
+    ),
+    linear-gradient(160deg, #8a5a33 0%, #6d4224 42%, #4e2d17 100%);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 226, 189, 0.35),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.55),
+    0 26px 60px rgba(0, 0, 0, 0.75);
+}
+
+/* Frontal de metal cepillado que cubre casi todo el mueble. */
+.tv-face {
+  position: absolute;
+  inset: 14px 14px 30px 14px;
+  border-radius: 18px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05) 0px,
+      rgba(0, 0, 0, 0.04) 2px,
+      rgba(255, 255, 255, 0.03) 4px
+    ),
+    linear-gradient(168deg, #d5d3cd 0%, #b3b1ab 46%, #8e8c87 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.35);
+}
+
+/* Hueco de la pantalla: rebajado respecto al frontal, con esquinas
+   redondeadas como un tubo de rayos catodicos. */
+.tv-screen {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 44px / 34px;
+  background: #000;
+  box-shadow:
+    0 0 0 6px #2a2825,
+    0 0 0 9px #9b9993,
+    inset 0 0 26px 10px rgba(0, 0, 0, 0.9);
+}
+
+/* Reflejo del cristal curvo. pointer-events: none para no robar ni un clic. */
+.tv-glass {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    radial-gradient(
+      120% 80% at 22% 8%,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.03) 26%,
+      rgba(255, 255, 255, 0) 52%
+    );
+  box-shadow: inset 0 0 70px 24px rgba(0, 0, 0, 0.55);
+}
+
+/* --- Columna de mandos --- */
+.tv-controls {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  bottom: 46px;
+  width: 186px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-radius: 12px;
+  background: linear-gradient(170deg, #c3c1bb 0%, #a09e99 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.tv-brand {
+  width: 150px;
+  height: 34px;
+  border-radius: 5px;
+  background: linear-gradient(180deg, #3a3833 0%, #1d1b19 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+.tv-brand-text {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #b9b5aa;
+}
+
+.tv-switch-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.tv-switch {
+  width: 34px;
+  height: 13px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #efeee9 0%, #b5b3ad 100%);
+  box-shadow: inset 0 1px 0 #fff, 0 1px 2px rgba(0, 0, 0, 0.45);
+}
+.tv-mini-knob {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, #55524c 0%, #22201d 70%);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Ruedas de sintonia: aro numerado y mando negro con indicador. */
+.tv-dial {
+  position: relative;
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  background:
+    repeating-conic-gradient(#e6e4df 0deg 3deg, #8d8b86 3deg 6deg);
+  box-shadow:
+    inset 0 0 0 3px #75736e,
+    0 2px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tv-dial-top {
+  margin-top: 2px;
+}
+.tv-dial-face {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 26%, #4a4742 0%, #1a1917 72%);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.16), 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+.tv-dial-pointer {
+  position: absolute;
+  width: 5px;
+  height: 30px;
+  border-radius: 3px;
+  background: #ddd9d0;
+  transform: translateY(-20px) rotate(34deg);
+  transform-origin: 50% 70%;
+}
+.tv-dial-pointer-alt {
+  transform: translateY(-20px) rotate(-58deg);
+}
+
+/* Rejilla del altavoz. */
+.tv-speaker {
+  flex: 1;
+  width: 150px;
+  min-height: 90px;
+  margin-top: 4px;
+  border-radius: 5px;
+  background: repeating-linear-gradient(
+    180deg,
+    #6f6d68 0px,
+    #6f6d68 3px,
+    #cfcdc7 3px,
+    #cfcdc7 7px
+  );
+  box-shadow: inset 0 0 0 2px #86847f, inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Peana. */
+.tv-foot {
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  bottom: -14px;
+  height: 18px;
+  border-radius: 0 0 8px 8px;
+  background: linear-gradient(180deg, #2b2724 0%, #17140f 100%);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+}

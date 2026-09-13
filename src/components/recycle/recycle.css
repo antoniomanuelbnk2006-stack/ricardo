@@ -1,0 +1,6 @@
+.recycle-content {
+  color: var(--terminal-fg);
+  font-family: var(--font-terminal);
+  font-size: 13px;
+  padding: 12px;
+}

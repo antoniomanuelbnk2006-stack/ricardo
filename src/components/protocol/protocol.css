@@ -1,0 +1,86 @@
+.protocol-shell {
+  background: #000;
+  color: #e0e0e0;
+  font-family: var(--font-terminal);
+  height: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.protocol-body { flex: 1; overflow: auto; }
+.protocol-btn {
+  display: block;
+  width: 100%;
+  margin: 6px 0;
+  padding: 8px;
+  background: #111;
+  color: var(--terminal-fg);
+  border: 1px solid var(--terminal-fg);
+  font-family: var(--font-terminal);
+  font-size: 13px;
+  cursor: pointer;
+  text-align: left;
+}
+.protocol-btn:hover:not(:disabled) {
+  background: #16251c;
+}
+.protocol-btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+/* Informe final (SYSTEM REPORT). Se usa una lista de definiciones en vez
+   de divs sueltos para que cada metrica quede asociada a su etiqueta al
+   leerla con un lector de pantalla. */
+.report-root {
+  font-family: var(--font-terminal);
+  color: #e0e0e0;
+  padding: 12px 8px 20px;
+}
+.report-title {
+  margin: 0 0 4px;
+  text-align: center;
+  color: #888;
+  letter-spacing: 2px;
+}
+.report-subject {
+  margin: 0 0 16px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--terminal-fg);
+  letter-spacing: 1px;
+}
+.report-table {
+  max-width: 460px;
+  margin: 0 auto;
+}
+.report-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 0;
+  border-bottom: 1px solid #222;
+  font-size: 13px;
+}
+.report-label {
+  color: #888;
+}
+.report-value {
+  margin: 0;
+  text-align: right;
+  word-break: break-word;
+}
+.report-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 22px;
+}
+.report-btn {
+  width: auto;
+  min-height: 44px;
+  padding: 0 18px;
+  text-align: center;
+}

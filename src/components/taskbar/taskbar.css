@@ -1,0 +1,77 @@
+.taskbar-root {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 28px;
+  padding: 0 3px;
+  gap: 4px;
+  background: var(--win-bg);
+  border-top: 2px solid var(--win-highlight);
+  display: flex;
+  align-items: center;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  z-index: 9999;
+}
+
+.start-btn,
+.taskbar-app-btn,
+.taskbar-clock {
+  height: 22px;
+  background: var(--win-bg);
+  color: #000;
+  border: 2px solid;
+  border-color: var(--win-highlight) var(--win-dark) var(--win-dark) var(--win-highlight);
+  cursor: default;
+  display: flex;
+  align-items: center;
+}
+.start-btn.is-active,
+.taskbar-app-btn.is-active {
+  border-color: var(--win-dark) var(--win-highlight) var(--win-highlight) var(--win-dark);
+  background: repeating-conic-gradient(#c0c0c0 0% 25%, #b0b0b0 0% 50%) 0 0 / 2px 2px;
+}
+
+.start-btn {
+  padding: 0 10px;
+  gap: 5px;
+  font-weight: bold;
+  flex: 0 0 auto;
+}
+.start-logo {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 auto;
+  background:
+    linear-gradient(135deg, #ff0000 0 50%, #00a000 0 50%) top left / 6px 6px,
+    linear-gradient(135deg, #0000ff 0 50%, #ffcc00 0 50%) top right / 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.taskbar-apps {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  gap: 4px;
+  overflow: hidden;
+}
+.taskbar-app-btn {
+  max-width: 160px;
+  padding: 0 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  line-height: 18px;
+}
+
+.taskbar-clock-wrap {
+  position: relative;
+  flex: 0 0 auto;
+}
+.taskbar-clock {
+  padding: 0 10px;
+  border-color: var(--win-shadow) var(--win-highlight) var(--win-highlight) var(--win-shadow);
+  font-variant-numeric: tabular-nums;
+}

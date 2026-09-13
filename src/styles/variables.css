@@ -1,0 +1,13 @@
+:root {
+  --win-bg: #c0c0c0;
+  --win-highlight: #ffffff;
+  --win-shadow: #808080;
+  --win-dark: #000000;
+  --desktop-teal: #008080;
+  --titlebar-active-a: #000080;
+  --titlebar-active-b: #1084d0;
+  --terminal-bg: #000000;
+  --terminal-fg: #3dff8a;
+  --font-ui: Tahoma, Geneva, "MS Sans Serif", sans-serif;
+  --font-terminal: "Courier New", monospace;
+}
